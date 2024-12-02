@@ -37,14 +37,11 @@ def calc_pair_distance(col1: list[int], col2: list[int]) -> list[int]:
 
 def calc_overlap(col1: list[int], col2: list[int]) -> list[int]:
     output = []
-    len_col2 = len(col2)
     for entry in col1:
         if entry not in col2:
             output.append(0)
             continue
-        first_overlap = col2.index(entry)
-        final_overlap = col2[::-1].index(entry)
-        ovelap_count = len_col2 - final_overlap - first_overlap
+        ovelap_count = col2.count(entry)
         output.append(entry * ovelap_count)
 
     return output
