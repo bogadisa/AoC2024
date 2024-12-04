@@ -1,4 +1,3 @@
-from typing import Literal
 import numpy as np
 
 
@@ -122,6 +121,7 @@ def main() -> int:
     total_matches, crossword_match_map = search_crossword(
         padded_letter_matrices, shape, offsets
     )
+    # Kinda gave up figuring out the offsets, just checked until it worked
     cross_combos = {
         "diagonal": {"diagonal_flipped": (0, 2), "diagonal_flipped_reverse": (-2, 0)},
         "diagonal_reverse": {
